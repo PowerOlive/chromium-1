@@ -27,7 +27,7 @@ wget -O LAST_CHANGE --no-check-certificate --header "Host: commondatastorage.goo
 ) && (
     for %%I in ("Chromium.lnk", "%appdata%\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Chromium.lnk") do (
         if exist "%%~I" (
-            shortcut.exe /A:E /F:"%%~I" /T:"%~dp0chrome-win32\chrome.exe" /P:"--no-first-run --allow-running-insecure-content --ppapi-flash-path=\"%~dp0pepflashplayer.dll\" --ppapi-flash-version=16.0.0.235 --User-data-dir=\"%~dp0Data\" --disk-cache-dir=\"%USERPROFILE%\\ChromeCache\"" /W:"%~dp0"
+            shortcut.exe /A:E /F:"%%~I" /T:"%~dp0chrome-win32\chrome.exe" /P:"--no-first-run --allow-running-insecure-content --ppapi-flash-path=\"%~dp0pepflashplayer.dll\" --ppapi-flash-version=17.0.0.99 --User-data-dir=\"%~dp0Data\" --disk-cache-dir=\"%USERPROFILE%\\ChromeCache\"" /W:"%~dp0"
         )
     )
 ) && (
