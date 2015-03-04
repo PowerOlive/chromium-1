@@ -24,6 +24,15 @@ wget -O LAST_CHANGE --no-check-certificate --header "Host: commondatastorage.goo
     )
 ) && (
     del /f chrome-win32.zip
+) && (
+    md "User Data"
+    ver | findstr /r "5\." && (
+      md "%USERPROFILE%\Local Settings\Application Data\Chromium"
+      junction.exe /accepteula "%USERPROFILE%\Local Settings\Application Data\Chromium" "%~dp0User Data"
+    ) || (
+      md "%LOCALAPPDATA%\Chromium"
+      junction.exe /accepteula "%LOCALAPPDATA%\Chromium\Chromium" "%~dp0User Data"
+    )
 ) || (
     pause
 )
