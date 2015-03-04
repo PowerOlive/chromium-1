@@ -1,1 +1,0 @@
-wget http://labsdownload.adobe.com/pub/labs/flashruntimes/flashplayer/flashplayer17_install_win_ppapi.exe

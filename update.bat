@@ -23,14 +23,6 @@ wget -O LAST_CHANGE --no-check-certificate --header "Host: commondatastorage.goo
       copy /y "%%~I" "chrome-win32\plugins\%%~nxI"
     )
 ) && (
-    if not exist "%~dp0Data" (md "%~dp0Data")
-) && (
-    for %%I in ("Chromium.lnk", "%appdata%\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Chromium.lnk") do (
-        if exist "%%~I" (
-            shortcut.exe /A:E /F:"%%~I" /T:"%~dp0chrome-win32\chrome.exe" /P:"--no-first-run --allow-running-insecure-content --ppapi-flash-path=\"%~dp0pepflashplayer.dll\" --ppapi-flash-version=17.0.0.99 --User-data-dir=\"%~dp0Data\" --disk-cache-dir=\"%USERPROFILE%\\ChromeCache\"" /W:"%~dp0"
-        )
-    )
-) && (
     del /f chrome-win32.zip
 ) || (
     pause
